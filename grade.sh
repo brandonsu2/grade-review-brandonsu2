@@ -31,5 +31,4 @@ echo $?
 # Then, add here code to compile and run, and do any post-processing of the
 # tests
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > results.txt
-grep 
 

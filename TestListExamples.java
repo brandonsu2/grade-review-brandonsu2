@@ -68,54 +68,5 @@ public void testMergeWithDuplicatesInBothLists() {
   assertEquals(expected, merged);
 }
 
-@Test
-public void testMergeAllUnique() {
-  List<String> left = Arrays.asList("b", "c", "e");
-  List<String> right = Arrays.asList("a", "d", "f");
-  List<String> merged = ListExamples.merge(left, right);
-  List<String> expected = Arrays.asList("a", "b", "c", "d", "e", "f");
-  assertEquals(expected, merged);
-}
 
-@Test
-public void testFilterWithMatchingElements() {
-  List<String> list = Arrays.asList("moon", "star", "planet", "moon");
-  List<String> filtered = ListExamples.filter(list, new IsMoon());
-  List<String> expected = Arrays.asList("moon", "moon");
-  assertEquals(expected, filtered);
-}
-
-@Test
-public void testFilterNoMatchingElements() {
-  List<String> list = Arrays.asList("sun", "star", "planet");
-  List<String> filtered = ListExamples.filter(list, new IsMoon());
-  List<String> expected = Arrays.asList();
-  assertEquals(expected, filtered);
-}
-
-@Test
-public void testMergeWithEmptyAndNonEmptyList() {
-  List<String> left = Arrays.asList();
-  List<String> right = Arrays.asList("a", "d");
-  List<String> merged = ListExamples.merge(left, right);
-  List<String> expected = Arrays.asList("a", "d");
-  assertEquals(expected, merged);
-}
-
-@Test
-public void testMergeTwoEmptyLists() {
-  List<String> left = Arrays.asList();
-  List<String> right = Arrays.asList();
-  List<String> merged = ListExamples.merge(left, right);
-  List<String> expected = Arrays.asList();
-  assertEquals(expected, merged);
-}
-
-@Test
-public void testFilterEmptyList() {
-  List<String> list = Arrays.asList();
-  List<String> filtered = ListExamples.filter(list, new IsMoon());
-  List<String> expected = Arrays.asList();
-  assertEquals(expected, filtered);
-} 
 }

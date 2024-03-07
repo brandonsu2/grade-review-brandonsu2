@@ -58,4 +58,15 @@ public class TestListExamples {
     List<String> expected = Arrays.asList();
     assertEquals(expected, filtered);
   }
+
+  @Test(timeout = 500)
+public void testMergeWithDuplicatesInBothLists() {
+  List<String> left = Arrays.asList("a", "b", "c", "e");
+  List<String> right = Arrays.asList("a", "d", "e");
+  List<String> merged = ListExamples.merge(left, right);
+  List<String> expected = Arrays.asList("a", "a", "b", "c", "d", "e", "e");
+  assertEquals(expected, merged);
+}
+
+
 }
